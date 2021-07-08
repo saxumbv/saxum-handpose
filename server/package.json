@@ -1,0 +1,30 @@
+{
+  "name": "hand-gesture-classifier",
+  "version": "0.0.1",
+  "description": "Deep learing gestures",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "train": "node ./scripts/train-gestures.js"
+  },
+  "type": "module",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "clang-format": "~1.2.3",
+    "mkdirp": "~0.5.1",
+    "webpack": "~4.28.4",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^1.3.2",
+    "csv-writer": "^1.6.0",
+    "fastify": "^3.18.0",
+    "fastify-cors": "^6.0.1",
+    "fastify-static": "^4.2.2",
+    "socket.io": "~2.4.0"
+  },
+  "resolutions": {
+    "node-fetch": "2.6.1",
+    "ssri": "8.0.1"
+  }
+}

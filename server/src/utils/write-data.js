@@ -20,20 +20,26 @@ const makeHeader = () => {
   return header;
 };
 
-export const writeData = (gestures) => {
+/**
+ * Recorded gestures, see types in client for exact structure
+ */
+export const writeData = (recordedGestures, trainDataPath, testDataPath) => {
   const trainContent = [makeHeader()];
   const testContent = [makeHeader()];
-  /**
-   * Here we parse the gesture data so that we can store it in CSV
-   * There are better ways of doing this
-   */
-  gestures.forEach((gestureWrapper, gestureIndex) => {
-    gestureWrapper.gestures.forEach((gesture, index) => {
-      const row = gesture.map((lm) => [lm[0], lm[1]]).flat();
-      // pushing the index which serves as our 'coded' gesture label
-      row.push(gestureIndex);
 
-      // distribute into test and training set
+  recordedGestures.forEach((gestureWrapper) => {
+    gestureWrapper.gestures.forEach((gesture, index) => {
+      /**
+       * Our gestures are arrays of 3D positions
+       * We store them flat in the cvs (for each x and each y value there is one column)
+       * TODO: we should look into storing data as json and train the model on 2D data (or perhaps 3D?)
+       */
+      const row = gesture.map((lm) => [lm[0], lm[1]]).flat();
+
+      // pushing the index which serves as our 'coded' gesture label
+      row.push(gestureWrapper.id);
+
+      // distribute into test and training set, 10% vs 90%
       if (index % 9 === 1) {
         testContent.push(row);
       } else {
@@ -43,14 +49,16 @@ export const writeData = (gestures) => {
   });
 
   /**
-   * Write the to a file so that we can experiment a bit with training the model
-   * You could also directly start the training from here of course
+   * Write the to a file so that we can experiment a bit with training the model,
+   * without having to start the client
    */
   try {
-    fs.writeFileSync("./data/train.csv", trainContent.join("\n"), {
+    fs.writeFileSync(trainDataPath, trainContent.join("\n"), {
       flag: "w",
     });
-    fs.writeFileSync("./data/test.csv", testContent.join("\n"), { flag: "w" });
+    fs.writeFileSync(testDataPath, testContent.join("\n"), {
+      flag: "w",
+    });
   } catch (e) {
     console.error("Bleh, something wrong while writing training data");
   }

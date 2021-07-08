@@ -1,7 +1,6 @@
-const argparse = require("argparse");
-const path = require("path");
-
-const { train } = require(process.cwd() + "/server/src/model/model.js");
+import argparse from "argparse";
+import { train } from "../src/model/model.js";
+import path from "path";
 
 const parser = new argparse.ArgumentParser({
   description: "TensorFlow.js Hand Gesture Training",

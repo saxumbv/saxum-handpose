@@ -1,5 +1,11 @@
+
 h3 {
     margin-bottom: 12px;
+}
+
+.app-container{
+    max-width: 1200px;
+    margin-top: 24px;
 }
 
 .controls .row {
@@ -21,5 +27,5 @@ h3 {
 .record-info{
     position: absolute;
     top: 12px;
-    left: 12px;
+    left: 24px;
 }
