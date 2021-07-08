@@ -1,0 +1,25 @@
+h3 {
+    margin-bottom: 12px;
+}
+
+.controls .row {
+    margin-top: 36px;
+}
+
+.active-gesture{
+    margin-bottom: 12px;
+}
+
+.recorded-gestures{
+    margin: 24px 0;
+}
+
+.hand-visualizer{
+    position: relative;
+}
+
+.record-info{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
