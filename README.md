@@ -4,7 +4,7 @@ Sample app to demonstrate training and detection of gesture with [TensorFlowJS](
 
 ### Deeplearning, TensorFlow and HandPose
 
-TensorFlow is a machine learning framework for training neural networks. HandPose is an already trained neural network (or data people call model) for "detecting hand landmarks in a live video stream". 
+TensorFlow is a machine learning framework for training neural networks. HandPose is an already trained neural network (or what data people call model) for "detecting hand landmarks in a live video stream". 
 
 Not entirely sure what a Neural Network is? Check the first 3 minutes of [this video](https://www.youtube.com/watch?v=bfmFfD2RIcg&ab_channel=Simplilearn) for a refresher. It will touch on all the jargon used in this readme and comments in the code!
 
