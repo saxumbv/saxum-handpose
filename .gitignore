@@ -7,8 +7,6 @@
 
 # server
 /server/node_modules
-/server/data
-/server/public
 
 # testing
 /coverage
