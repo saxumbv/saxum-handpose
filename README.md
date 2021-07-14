@@ -56,13 +56,17 @@ Try adjusting layers (add some layers, change their sizes, change the activation
 
 ## Development
 
+### Installing
+
+Run `yarn install` and `cd server && yarn install` to install both frontend and server.
+
 ### Available Scripts
 
 In the project directory, you can run:
 
 #### `yarn start:server`
 
-Will start the server where we will train the model. 
+Starts the server where we will train the model. 
 
 #### `yarn start`
 
